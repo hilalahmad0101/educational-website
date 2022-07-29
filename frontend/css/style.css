@@ -169,6 +169,10 @@ a {
     letter-spacing: 2px;
 }
 
+.hero__right__image img {
+    width: 100%;
+}
+
 /* hero section end */
 
 /* offer start */
