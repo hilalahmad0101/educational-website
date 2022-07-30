@@ -1,5 +1,25 @@
 <?php
 
+use App\Http\Controllers\ContactFormController;
+use App\Http\Livewire\Admin\AddBlog;
+use App\Http\Livewire\Admin\AddOffer;
+use App\Http\Livewire\Admin\AddStudyDestination;
+use App\Http\Livewire\Admin\AddUniversity;
+use App\Http\Livewire\Admin\Auth\Login;
+use App\Http\Livewire\Admin\Blog;
+use App\Http\Livewire\Admin\Dashboard;
+use App\Http\Livewire\Admin\Offer;
+use App\Http\Livewire\Admin\StudyDestination;
+use App\Http\Livewire\Admin\University;
+use App\Http\Livewire\Admin\UpdateBlog;
+use App\Http\Livewire\Admin\UpdateOffer;
+use App\Http\Livewire\Admin\UpdateStudyDestination;
+use App\Http\Livewire\Admin\UpdateUniversity;
+use App\Http\Livewire\Blog as LivewireBlog;
+use App\Http\Livewire\Home;
+use App\Http\Livewire\Offer as LivewireOffer;
+use App\Http\Livewire\StudyDestination as LivewireStudyDestination;
+use App\Http\Livewire\University as LivewireUniversity;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +33,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', Home::class)->name('users.home');
+Route::get('/blog', LivewireBlog::class)->name('users.blog');
+Route::get('/offer', LivewireOffer::class)->name('users.offer');
+Route::get('/study-destination', LivewireStudyDestination::class)->name('users.destination');
+Route::get('/university', LivewireUniversity::class)->name('users.university');
+Route::post('/post/contact', [ContactFormController::class, 'index']);
+
+Route::middleware(['guest:admin'])->group(function () {
+    Route::get('/admin/login', Login::class)->name('admin.login');
+});
+
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/admin/dashboard', Dashboard::class)->name('admin.dashboard');
+    Route::get('/admin/add/offer', AddOffer::class)->name('admin.add-offer');
+    Route::get('/admin/get/offer', Offer::class)->name('admin.get-offer');
+    Route::get('/admin/update/offer/{id}', UpdateOffer::class)->name('admin.update-offer');
+    // study destination routes
+    Route::get('/admin/add/destination', AddStudyDestination::class)->name('admin.add-destination');
+    Route::get('/admin/get/destination', StudyDestination::class)->name('admin.get-destination');
+    Route::get('/admin/update/destination/{id}', UpdateStudyDestination::class)->name('admin.update-destination');
+
+    // Blog routes
+    Route::get('/admin/add/blog', AddBlog::class)->name('admin.add-blog');
+    Route::get('/admin/get/blog', Blog::class)->name('admin.get-blog');
+    Route::get('/admin/update/blog/{id}', UpdateBlog::class)->name('admin.update-blog');
+
+    // University routes
+    Route::get('/admin/add/university', AddUniversity::class)->name('admin.add-university');
+    Route::get('/admin/get/university', University::class)->name('admin.get-university');
+    Route::get('/admin/update/university/{id}', UpdateUniversity::class)->name('admin.update-university');
 });
