@@ -25,8 +25,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="hero__right__image">
-                        <img src="https://images.unsplash.com/photo-1658409009905-00a0f737bdf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
-                            alt="">
+                        <img src="{{ asset('images/hero.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -43,18 +42,28 @@
                 <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12">
                     <div class="top__offer__right">
                         <div class="top__offer__right__carousel owl-carousel owl-theme">
-                            @forelse ($universities as $university)
-                                <img src="{{ asset('storage') }}/{{ $university->icon }}" width="48" height="48"
-                                    alt="">
+                            {{-- @forelse ($universities as $university)
+                                <img src="{{ asset('storage') }}/{{ $university->country_flag }}" width="48"
+                                    height="48" alt="">
                             @empty
                                 <h4>Record not found</h4>
-                            @endforelse
-                            <div class="item">
-
+                            @endforelse --}}
+                            <div class="item" id="image">
+                                <img src="{{ asset('images/logo1.png') }}" style="width: 60px;" alt="">
                             </div>
-                            <div id="next__button__offer">
-
+                            <div class="item" id="image">
+                                <img src="{{ asset('images/logo2.png') }}" style="width: 60px;" alt="">
                             </div>
+                            <div class="item" id="image">
+                                <img src="{{ asset('images/logo3.png') }}" style="width: 60px;" alt="">
+                            </div>
+                            <div class="item" id="image">
+                                <img src="{{ asset('images/logo4.png') }}" style="width: 60px;" alt="">
+                            </div>
+
+                        </div>
+                        <div id="next__button__offer">
+                            <i class="fa-solid fa-arrow-right"></i>
                         </div>
                     </div>
                 </div>
@@ -67,20 +76,16 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
                     <div class="our__company__left">
                         <div class="our__company__left__image">
-                            <img class="img1"
-                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="">
+                            <img class="img1" src="{{ asset('images/hero3.png') }}" alt="">
                             <div class="our__company__left_small__image">
-                                <img class="img2"
-                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHVzZXJzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                    alt="">
+                                <img class="img2" src="{{ asset('images/hero2.png') }}" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
                     <p class="our__company__right__side__p">The best part of our company</p>
-                    <h1>We are offer
+                    <h1 class="our__company__right__side__h1">We are offer
                         the best support</h1>
                     <div class="contact__information">
                         <div class="phone d-flex align-items-center">
@@ -123,8 +128,9 @@
                         </div>
                         <hr>
                         <div class="address d-flex align-items-center">
-                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" <svg width="44"
-                                height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" <svg
+                                width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M0 22C0 9.84974 9.84974 0 22 0C34.1503 0 44 9.84974 44 22C44 34.1503 34.1503 44 22 44C9.84974 44 0 34.1503 0 22Z"
                                     fill="url(#paint0_linear_0_1)" />
@@ -150,7 +156,8 @@
     <!-- our Company end -->
 
     <!-- education start -->
-    <section class="education">
+
+    <section class="education" style=" background-image: url({{ asset('images/main__bg.png') }});">
         <div class="container">
             <div class="top__box">
                 <h1 class="top__box__h1">India’s Leading Overseas Education Consultants</h1>
@@ -207,7 +214,7 @@
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <div class="update__left__side">
-                                <img src="images/vbimage.png" alt="">
+                                <img src="{{ asset('images/main_img.png') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -253,7 +260,7 @@
                         <div class="row d-flex align-items-center justify-content-center">
                             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-2">
                                 <div class="textimonial__image">
-                                    <img src="images/img1.png" alt="">
+                                    <img src="{{ asset('images/review.png') }}" alt="">
                                     <div class="textimonial__arrow">
                                         <i class="fa-solid fa-arrow-left" id="left__testimonial"></i>
                                         <i class="fa-solid fa-arrow-right" id="right__testimonial"></i>
@@ -275,8 +282,7 @@
                                     </p>
                                     <div class="testimonial__profile">
                                         <div class="left__testimonial__profile">
-                                            <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                                                alt="">
+                                            <img src="{{ asset('images/review.png') }}" alt="">
                                         </div>
                                         <div class="right__testimonial__profile">
                                             <h1 class="profile__heading">Lucas Henry</h1>

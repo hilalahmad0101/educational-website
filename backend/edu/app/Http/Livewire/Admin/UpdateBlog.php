@@ -24,9 +24,12 @@ class UpdateBlog extends Component
         $this->category = $blog->category;
         $this->author = $blog->author_id;
     }
+    public $categorys;
+
     public function render()
     {
         $this->authors = Admin::all();
+        $this->categorys = Category::all();
         return view('livewire.admin.update-blog')->layout('layout.admin-app');
     }
 

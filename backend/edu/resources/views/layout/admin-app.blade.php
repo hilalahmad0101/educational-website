@@ -20,56 +20,70 @@
 
 <body>
     <div id="navbar" class="d-flex align-items-start">
-        <div id="sidebar">
+        <div class="sidebar">
             <div class="logo">
                 <div class="sidebar__side__logo">
                     <h1>Edu</h1>
                     <span>+</span>
                 </div>
+                <i id="closed" style="cursor: pointer;" class="fa-solid fa-xmark"></i>
             </div>
             <div class="sidebar__menu">
                 <ul>
                     <li>
-                        <a href="" class="active">
-                            <i class="fa-solid fa-house-user"></i>
+                        <a href="{{ route('admin.dashboard') }}"
+                            class="{{ Request::routeIs('admin.dashboard') ? 'active' : '' }}">
+                            <i class="fa-solid fa-gauge"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('admin.get-category') }}"
+                            class="{{ Request::routeIs('admin.get-category') ? 'active' : '' }}">
+                            <i class="fa-solid fa-gauge"></i>
+                            <span>Category</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.get-offer') }}"
+                            class="{{ Request::routeIs('admin.get-offer') ? 'active' : '' }}">
                             <i class="fa-brands fa-buffer"></i>
                             <span>What We Offer</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <i class="fa-solid fa-house-user"></i>
-                            <span>Dashboard</span>
+                        <a href="{{ route('admin.get-university') }}"
+                            class="{{ Request::routeIs('admin.get-university') ? 'active' : '' }}">
+                            <i class="fa-solid fa-school"></i>
+                            <span>Universities</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <i class="fa-solid fa-house-user"></i>
-                            <span>Dashboard</span>
+                        <a href="{{ route('admin.get-blog') }}"
+                            class="{{ Request::routeIs('admin.get-blog') ? 'active' : '' }}">
+                            <i class="fa-brands fa-blogger"></i>
+                            <span>Blog</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <i class="fa-solid fa-house-user"></i>
-                            <span>Dashboard</span>
+                        <a href="{{ route('admin.get-destination') }}"
+                            class="{{ Request::routeIs('admin.get-destination') ? 'active' : '' }}">
+                            <i class="fa-solid fa-book"></i>
+                            <span>Study Destination</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <i class="fa-solid fa-house-user"></i>
-                            <span>Dashboard</span>
+                        <a href="{{ route('admin.contact') }}"
+                            class="{{ Request::routeIs('admin.contact') ? 'active' : '' }}">
+                            <i class="fa-solid fa-address-book"></i>
+                            <span>Contact</span>
                         </a>
                     </li>
-
                     <li>
-                        <a href="">
-                            <i class="fa-solid fa-house-user"></i>
-                            <span>Dashboard</span>
+                        <a href="{{ route('admin.setting') }}"
+                            class="{{ Request::routeIs('admin.setting') ? 'active' : '' }}">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Setting</span>
                         </a>
                     </li>
                 </ul>
@@ -77,14 +91,27 @@
         </div>
         <div class="main__content">
             <div id="main__top__navbar">
+                <i style="cursor: pointer;" id="show" class="fa-solid fa-bars"></i>
                 <div class="main__top__search">
                     <input type="text" name="" placeholder="Search here..." id="form__control">
                 </div>
                 <div class="main__top__profile">
                     <i class="fa-solid fa-bell"></i>
                     <div class="main__profile">
-                        <img src="{{ Auth::guard('admin')->user()->image }}" alt="">
-                        <span>{{ Auth::guard('admin')->user()->name }}</span>
+                        <div class="dropdown">
+                            <img style="cursor:pointer;" class="dropdown-toggle" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false"
+                                src="{{ asset('storage') }}/{{ Auth::guard('admin')->user()->image }}" alt="">
+                            <span>{{ Auth::guard('admin')->user()->name }}</span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="{{ route('admin.update-profile') }}">Update
+                                        Profile</a></li>
+                                <li><a class="dropdown-item" href="{{ route('admin.change-password') }}">Change
+                                        Password</a></li>
+                                @livewire('admin.auth.logout')
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </div>

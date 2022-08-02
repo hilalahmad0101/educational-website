@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>{{ $title }}</title>
+    @livewireStyles
 </head>
 
 <body>
@@ -27,7 +28,7 @@
                         <span>+</span>
                     </div>
                 </div>
-                <button id="show__navbar">click</button>
+                <i class="fa-solid fa-bars" id="show__navbar" style="cursor: pointer"></i>
                 <div class="navbar__right_side">
                     <a href="{{ route('users.home') }}"
                         class="nav-link {{ Request::routeIs('users.home') ? 'active' : '' }}">Home</a>
@@ -101,14 +102,22 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 my-4">
-                    <div class="footer__company">
-                        <h1>Company</h1>
+                    <div class="footer__contact">
+                        <h1>Contact Us</h1>
                         <p>
-                            <a class="nav-link my-2">Course</a>
-                            <a class="nav-link my-2"> Instructors</a>
-                            <a class="nav-link my-2"> Sign In</a>
-                            <a class="nav-link my-2"> Sign Up</a>
-                            <a class="nav-link my-2"> Contact</a>
+                            <a class="nav-link my-2">
+                                <i class="fa-solid fa-phone"></i>
+                                <span>+91 7687 675 879</span>
+                            </a>
+                            <a class="nav-link my-2">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Company@gmail.com</span>
+                            </a>
+                            <a class="nav-link my-2">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>3517 W. Gray St. Utica,
+                                    Pennsylvania 57867</span>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -128,10 +137,11 @@
     <!-- footer section end -->
 
     <!-- js cdn -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    @livewireScripts
 </body>
 
 </html>

@@ -11,10 +11,10 @@ $(document).ready(function () {
     responsiveBaseElement: "body",
     responsive: {
       0: {
-        items: 3,
+        items: 6,
       },
       700: {
-        items: 4,
+        items: 6,
       },
       1220: {
         items: 6,

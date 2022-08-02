@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Blog;
+use App\Models\StudyDestination;
 use App\Models\University;
 use Livewire\Component;
 
@@ -13,7 +14,7 @@ class Home extends Component
     public function render()
     {
         $this->blogs = Blog::orderBy('id', 'desc')->limit(3)->get();
-        $this->universities = University::orderBy('id', 'desc')->get();
+        $this->universities = StudyDestination::orderBy('id', 'desc')->get();
         return view('livewire.home')->layout('layout.app');
     }
 }

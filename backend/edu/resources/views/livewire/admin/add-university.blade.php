@@ -37,12 +37,12 @@
                         <h1 class="main__left__h1">Add Universitie</h1>
                         <p class="main__left__p">Include a service what you are offer</p>
                     </div>
-                    <div class="main__right">
+                    {{-- <div class="main__right">
                         <p class="main__right__add">Add Universitie</p>
                         <button class="main__right__btn">
                             <i class="fa-solid fa-plus"></i>
                         </button>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="main__page__form">
                     <div class="main__page__form__left">

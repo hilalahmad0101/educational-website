@@ -20,7 +20,12 @@
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm- my-3">
                     <div class="un__left">
                         <ul>
-                            <li class="active" wire:click='showPostByCountry(india)'>India</li>
+                            @forelse ($categorys as $category)
+                                <li class="active" wire:click='showPostByCountry({{ $category->country_name }})'>
+                                    {{ $category->country_name }}</li>
+                            @empty
+                                <h4>Record not found</h4>
+                            @endforelse
                         </ul>
 
                     </div>

@@ -21,55 +21,45 @@
                 </div>
                 <div class="main__right">
                     <p class="main__right__add">Add University</p>
-                    <button class="main__right__btn">
-                        <a href="{{ route('admin.add-university') }}"> <i class="fa-solid fa-plus"></i></a>
-                    </button>
+                    <a href="{{ route('admin.add-university') }}"> <button class="main__right__btn">
+                            <i class="fa-solid fa-plus"></i>
+                        </button></a>
                 </div>
             </div>
             <div class="main__page__form">
-                <div class="table-responsive w-100">
-                    <table class="table">
-                        {{-- <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Icon</th>
-                                <th>Title & Description</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead> --}}
-                        <tbody style="vertical-align: middle">
-                            @forelse ($universities as $university)
-                                <tr>
-                                    <td>{{ $university->id }}</td>
-                                    <td><img src="{{ asset('storage') }}/{{ $university->image }}" width="50"
-                                            height="50" alt=""></td>
-                                    <td>
-                                        <h3 class="table__main__page__h3">{{ $university->title }}</h3>
-                                        <p class="table__main__page__p">{{ $university->description }}</p>
-                                    </td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <span class=" dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                data-bs-toggle="dropdown" aria-expanded="true">
-                                                <i class="fa-solid fa-ellipsis"></i>
-                                            </span>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li><a class="dropdown-item"
-                                                        href="{{ route('admin.update-university', ['id' => $university->id]) }}">Edit</a>
-                                                </li>
-                                                <li><a class="dropdown-item"
-                                                        wire:click.prevent='delete({{ $university->id }})'
-                                                        href="#">Delete</a></li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            @empty
-                                <h1>Record not found</h1>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div>
+                @forelse ($universities as $university)
+                    <div class="table__data w-100">
+                        <div class="left__table">
+                            <div class="count">
+                                {{ $university->id }}
+                            </div>
+                            <div class="img">
+                                <img src="{{ asset('storage') }}/{{ $university->image }}" alt="">
+                            </div>
+                            <div class="content">
+                                <h2>{{ $university->title }}</h2>
+                                <p>{{ $university->description }}</p>
+                            </div>
+                        </div>
+                        <div class="right__table">
+                            <div class="dropdown">
+                                <span class=" dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="true">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </span>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('admin.update-offer', ['id' => $university->id]) }}">Edit</a>
+                                    </li>
+                                    <li><a class="dropdown-item" wire:click.prevent='delete({{ $university->id }})'
+                                            href="#">Delete</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <h1>Record not found</h1>
+                @endforelse
             </div>
         </div>
 

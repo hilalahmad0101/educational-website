@@ -19,9 +19,9 @@
                 </div>
                 <div class="main__right">
                     <p class="main__right__add">Add Service</p>
-                    <button class="main__right__btn">
-                        <a href="{{ route('admin.add-blog') }}"> <i class="fa-solid fa-plus"></i></a>
-                    </button>
+                    <a href="{{ route('admin.add-blog') }}"> <button class="main__right__btn">
+                            <i class="fa-solid fa-plus"></i>
+                        </button></a>
                 </div>
             </div>
             <div class="main__page__form">

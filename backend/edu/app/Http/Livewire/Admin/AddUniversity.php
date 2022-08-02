@@ -26,7 +26,7 @@ class AddUniversity extends Component
     public function nextOffer2()
     {
         $this->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:10000',
         ]);
         $this->offer_count = 3;
     }

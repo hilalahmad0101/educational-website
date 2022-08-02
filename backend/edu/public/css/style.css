@@ -100,6 +100,11 @@ a {
     padding: 2px 10px;
 }
 
+#navbar .navbar__right_side a:hover {
+    color: #1D90C2 !important;
+
+}
+
 .active {
     color: #1D90C2 !important;
 }
@@ -170,7 +175,15 @@ a {
 }
 
 .hero__right__image img {
-    width: 100%;
+    width: 96%;
+    height: fit-content;
+    padding: 0px 74px;
+}
+
+#image img {
+    width: 59px px !important;
+    text-align: center;
+    padding-top: 20px;
 }
 
 /* hero section end */
@@ -198,24 +211,30 @@ a {
 .top__offer__right {
     height: 14vh;
     position: relative;
+    width: 100%;
 }
 
 #next__button__offer {
     cursor: pointer;
 }
 
-#next__button__offer svg {
+#next__button__offer i {
     border-radius: 40px;
     width: 45px;
     height: 45px;
     position: absolute;
-    top: 50%;
+    top: 64%;
     right: 0;
     transform: translate(50%, -95%);
     background-color: #FC8955;
     padding: 8px 13px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    fill: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 /* offer end */
@@ -754,7 +773,7 @@ label {
 }
 
 .our__company__left__image .img1 {
-    width: 100%;
+    width: 62%;
     border-radius: 10px;
 }
 
@@ -781,7 +800,6 @@ label {
 }
 
 .education {
-    background-image: url('https://images.unsplash.com/photo-1658409009905-00a0f737bdf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60');
     width: 100%;
     height: fit-content;
     padding: 50px 0px;
@@ -858,7 +876,9 @@ label {
 
 .update__left__side img {
     width: 100%;
-    margin-top: -100px;
+    height: 61vh;
+    object-fit: cover;
+    margin-top: -29px;
 }
 
 .update__p__sub__title {
@@ -944,7 +964,6 @@ label {
 
 .footer__category p {
     margin-top: 15px;
-
 }
 
 .footer__company p a {
@@ -959,6 +978,28 @@ label {
 
 .footer__category p a {
     color: #797979;
+}
+
+.footer__contact p {
+    margin-top: 15px;
+
+}
+
+.footer__contact h1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.footer__contact p a {
+    color: #797979;
+    display: flex;
+    align-items: center;
+}
+
+
+.footer__contact p a span {
+    color: #797979;
+    margin-left: 10px;
 }
 
 .footer {
@@ -983,6 +1024,77 @@ label {
 
 /* footer end */
 
+.study__country {
+    position: relative;
+}
+
+.image__country__logo img {
+    width: 87px !important;
+    height: 87px !important;
+    border-radius: 100% !important;
+}
+
+.comments .comment__p {
+    color: #797979;
+}
+
+.comments img {
+    width: 60px;
+    height: 60px;
+}
+
+.comments {
+    background-color: #FAFAFA;
+    padding: 30px 0px;
+}
+
+.related img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.page__detail .date__time {
+    display: flex;
+    align-items: center;
+}
+
+.page__detail .date__time a svg {
+    width: 20px;
+    height: 20px;
+    fill: #797979;
+}
+
+.page__detail .post__image {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 20px 0px;
+}
+
+.page__detail .date__time a {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.page__detail .date__time a span {
+    color: #797979;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.image__country__logo {
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    display: block;
+}
 
 
 /* responsive */
@@ -993,9 +1105,13 @@ label {
         line-height: 60px;
     }
 
+    .contact__right__side {
+        width: 100% !important;
+    }
+
 }
 
-@media screen and (max-width: 993px) {
+@media screen and (max-width: 1024px) {
     #show__navbar {
         display: block;
     }
@@ -1026,6 +1142,14 @@ label {
 
     #navbar .navbar__right_side.active__navbar {
         display: block;
+    }
+
+    .hero__left__content {
+        text-align: center;
+    }
+
+    .hero__right__image {
+        text-align: center;
     }
 }
 
@@ -1115,9 +1239,23 @@ label {
     .blogs {
         margin-top: 205% !important;
     }
+
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero__left__content {
+        text-align: center;
+    }
+
+    .hero__right__image {
+        text-align: center;
+    }
 }
 
-@media screen and (max-width:375px) {
+@media screen and (max-width:414px) {
     .latest__blog h1 {
         font-size: 19px;
     }
@@ -1138,7 +1276,102 @@ label {
         font-weight: bold;
     }
 
+
     .blogs {
-        margin-top: 205% !important;
+        margin-top: 185% !important;
     }
+
+    .blog__body {
+        text-align: center;
+    }
+
+    .date__time {
+        display: flex;
+        justify-content: center;
+    }
+
+    .study-blog-page {
+        margin-top: 9% !important;
+    }
+
+    .hero__left__content .offer p {
+        font-size: 16px;
+    }
+
+    .hero__left__content .hero_btn button {
+        padding: 6px 15px;
+        border-radius: 27px;
+        font-size: 14px;
+        line-height: 30px;
+        letter-spacing: 2px;
+    }
+
+    .top__offer__left__heading h1 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .our_company {
+        margin-top: 44px;
+    }
+
+    .our__company__right__side__h1 {
+        font-size: 25px;
+    }
+
+    .education {
+        margin-top: 44px;
+    }
+
+    .top__box .top__box__h1 {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 30px;
+        width: 100%;
+    }
+
+    .update__h1 {
+        font-size: 25px;
+        font-weight: 800;
+        line-height: 40px;
+    }
+
+
+    .testimonial__heading {
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 40px;
+
+    }
+
+    .testimonial {
+        margin: 10% 0px;
+    }
+
+    .study__contact_content h1 {
+        font-size: 25px;
+    }
+
+    .form__btn button {
+        padding: 8px 17px;
+        border-radius: 27px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 2px;
+    }
+
+    .study__contact {
+        margin-top: 9% !important;
+    }
+
+    .latest__right {
+        text-align: center;
+    }
+
+    .auther__profile {
+        justify-content: center;
+    }
+
+
 }

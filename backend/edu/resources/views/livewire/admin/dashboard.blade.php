@@ -1,6 +1,5 @@
 <div>
     <x-slot name="title">Dashboard</x-slot>
-
     <div class="container">
         <div class="welcome">
             <h1>Hi <span>{{ Auth::guard('admin')->user()->name }} ,</span> Welcome back!</h1>
@@ -8,7 +7,7 @@
         <div class="main__box">
             <p class="main__overview">Overview</p>
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
                     <div class="main__boxs">
                         <div class="main__box__graph">
                             <svg width="100" height="80" viewBox="0 0 100 80" fill="none"
@@ -32,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
                     <div class="main__boxs">
                         <div class="main__box__graph">
                             <svg width="100" height="80" viewBox="0 0 100 80" fill="none"
@@ -56,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
                     <div class="main__boxs">
                         <div class="main__box__graph">
                             <svg width="100" height="80" viewBox="0 0 100 80" fill="none"

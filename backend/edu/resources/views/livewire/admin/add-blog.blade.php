@@ -35,12 +35,12 @@
                     <h1 class="main__left__h1">Add Blog</h1>
                     <p class="main__left__p">Include a service what you are offer</p>
                 </div>
-                <div class="main__right">
+                {{-- <div class="main__right">
                     <p class="main__right__add">Add Blog</p>
                     <button class="main__right__btn">
                         <i class="fa-solid fa-plus"></i>
                     </button>
-                </div>
+                </div> --}}
             </div>
             <div class="main__page__form">
                 <div class="main__page__form__left">
@@ -87,10 +87,13 @@
                                 <div class="main__page__form__cont">
 
                                     <select name="" wire:model='category' id="form__control">
-                                        <option value="category1">category</option>
-                                        <option value="category1">category</option>
-                                        <option value="category1">category</option>
-                                        <option value="category1">category</option>
+                                        <option value="">Select category</option>
+                                        @forelse ($categorys as $category)
+                                            <option value="{{ $category->category_name }}">
+                                                {{ $category->category_name }}</option>
+                                        @empty
+                                            <option value="">Category not Found</option>
+                                        @endforelse
                                     </select>
                                     @error('category')
                                         <span class="text-danger">{{ $message }}</span>
@@ -150,8 +153,6 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <p class="main__page__form__right__p__size">44x44 or higher recommended. Max 10MB each*
-                                </p>
                             </div>
                         @endif
                         <div class="main__btns">

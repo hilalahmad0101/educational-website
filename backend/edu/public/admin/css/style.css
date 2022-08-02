@@ -35,6 +35,10 @@ a {
     font-size: 20px;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 ul li {
     font-family: 'Roboto', sans-serif;
     list-style: none;
@@ -55,7 +59,7 @@ body {
     background-color: #FAFAFA;
 }
 
-#sidebar {
+.sidebar {
     position: fixed;
     width: 230px;
     border-right: 1px solid #F7F6FB;
@@ -71,6 +75,64 @@ body {
 .logo {
     margin-top: 30px;
     margin-left: 35px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo #closed {
+    display: none;
+}
+
+.table__data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table__data {
+    margin-bottom: 1px solid #797979;
+}
+
+.table__data .left__table {
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.table__data .left__table .count {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000000;
+}
+
+.table__data .left__table .img img {
+    width: 50px;
+    height: 50px;
+}
+
+.table__data .left__table .img {
+    margin: 0px 20px;
+}
+
+.table__data .left__table .content h1 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    color: #2B2B2B;
+}
+
+.table__data .left__table .content p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #797979;
+}
+
+#main__top__navbar #show {
+    display: none;
 }
 
 .sidebar__side__logo {
@@ -139,6 +201,7 @@ body {
     padding: 10px 30px;
     border-radius: 30px;
     border: 1px solid #E7E7E7;
+    display: block;
 }
 
 .main__top__profile {
@@ -267,16 +330,15 @@ body {
 
 .main__heading .main__right .main__right__btn {
     background: #1D90C2;
-    padding: 10px 15px;
+    padding: 6px 15px;
     border-radius: 50px;
     margin-left: 20px;
     margin-bottom: 15px;
-
+    color: white !important;
 }
 
-.main__heading .main__right .main__right__btn a i {
+.main__heading .main__right .main__right__btn i {
     font-size: 15px;
-    color: white;
 }
 
 .main__page__content {
@@ -413,17 +475,74 @@ body {
     border-radius: 30px;
     border: 1px solid #E7E7E7;
     background: #F6F6F6;
+    display: block;
 }
 
-.table__main__page__h3 {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
+.action1 {
+    border-radius: 40px;
+    background-color: #1D90C2;
+    padding: 11px 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
 }
 
-.table__main__page__p {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #797979;
+.action2 {
+    border-radius: 40px;
+    background-color: #FC8955;
+    padding: 11px 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    .sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+        height: 100vh;
+        z-index: 999;
+        display: none;
+    }
+
+    .main__content {
+        margin-left: 0;
+    }
+
+    .logo #closed {
+        display: block;
+    }
+
+    #main__top__navbar #show {
+        display: block;
+    }
+
+    .active {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    #main__top__navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main__top__profile {
+        margin-top: 20px;
+    }
+
+    .main__top__search #form__control {
+        margin-top: 20px;
+    }
 }

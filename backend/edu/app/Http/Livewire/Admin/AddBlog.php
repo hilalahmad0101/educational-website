@@ -12,8 +12,10 @@ class AddBlog extends Component
     public $image, $category, $author, $title, $description, $offer_count = 1;
     use WithFileUploads;
     public $authors;
+    public $categorys;
     public function render()
     {
+        $this->categorys = Category::all();
         $this->authors = Admin::all();
         return view('livewire.admin.add-blog')->layout('layout.admin-app');
     }
@@ -25,7 +27,7 @@ class AddBlog extends Component
     public function nextOffer2()
     {
         $this->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:10000',
         ]);
         $this->offer_count = 3;
     }

@@ -15,14 +15,18 @@
     </section>
     <!-- heading end -->
     <!-- post start -->
-    <section class="blogs">
+    <section class="blogs study-blog-page">
         <div class="container">
             <div class="row">
                 @forelse ($studys as $study)
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 px-4 my-3">
                         <div class="blog__card">
-                            <div class="blog__header">
-                                <img src="{{ asset('storage\\') }}/{{ $study->image }}" alt="">
+                            <div class="blog__header study__country">
+                                <img src="{{ asset('storage\\') }}/{{ $study->image }}" alt="{{ $study->title }}">
+                                <div class="image__country__logo">
+                                    <img src="{{ asset('storage\\') }}/{{ $study->country_flag }}"
+                                        alt="{{ $study->title }}">
+                                </div>
                             </div>
                             <div class="blog__body">
                                 <h1 class="study__title">{{ $study->title }}</h1>

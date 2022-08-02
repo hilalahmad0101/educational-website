@@ -55,7 +55,7 @@ body {
     background-color: #FAFAFA;
 }
 
-#sidebar {
+.sidebar {
     position: fixed;
     width: 230px;
     border-right: 1px solid #F7F6FB;
@@ -71,6 +71,18 @@ body {
 .logo {
     margin-top: 30px;
     margin-left: 35px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo #closed {
+    display: none;
+}
+
+#main__top__navbar #show {
+    display: none;
 }
 
 .sidebar__side__logo {
@@ -412,4 +424,48 @@ body {
     border-radius: 30px;
     border: 1px solid #E7E7E7;
     background: #F6F6F6;
+}
+
+@media screen and (max-width: 900px) {
+    .sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+        height: 100vh;
+        z-index: 999;
+        display: none;
+    }
+
+    .main__content {
+        margin-left: 0;
+    }
+
+    .logo #closed {
+        display: block;
+    }
+
+    #main__top__navbar #show {
+        display: block;
+    }
+
+    .active {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    #main__top__navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main__top__profile {
+        margin-top: 20px;
+    }
+
+    .main__top__search #form__control {
+        margin-top: 20px;
+    }
 }
